@@ -249,7 +249,7 @@ edifout.separateFile,boolean,False,Write user cells in a separate file (only if 
 edifout.suppressBusInferencing,boolean,False,Don't infer buses from scalar names if this is set true.,0
 edifout.suppressUnjoinedNets,boolean,False,Parameter to filter nets which don't connect to any pin or terminal,0
 edifout.writeFolded,boolean,False,Write folded netlist,1
-edifout.writePrimContents,boolean,False,,0
+edifout.writePrimContents,boolean,False,Write contents of hierarchical primitives created by funnel,0
 elaboration.rodin.useDataFile,boolean,False,(Obsolete),1
 est.noBestEffort,boolean,False,Estimator will return 0 values for unavailable data,0
 export.escapeNameFormat,boolean,False,Escape the hierarchical separator when part of the name.,0
@@ -483,7 +483,7 @@ impl.rodin.netlistEDIF,boolean,False,Use EDIF as input to rodin implementation f
 incremental.numTimingPaths,integer,False,Number of timing paths of which timing data is collected for incremental flow,10
 incremental.toolMarginOverRecordedWNS,float,False,tighten WNS target for incr flow by this much over refWNS,0.05
 incremental.turnOffIncrFlow,boolean,False,Turn off incremental flow,0
-iopl.autoPlaceDeviceView,boolean,False,,0
+iopl.autoPlaceDeviceView,boolean,False,Auto Placer aligns on device view,0
 iopl.autoPlaceOnlyHeur,integer,False,Run Only One Heuristic,-1
 iopl.breakAtFirst,boolean,False,Exit ILP solver at first feasible solution,0
 iopl.checkSiteCapacity,boolean,False,Check a site's capacity while formulating ILP constraints and update the constraints accordingly,1
@@ -567,7 +567,7 @@ ips.dft.enableIPXinXIT,boolean,False,Allow XIT access to IPX functions (for test
 ips.disableStrictMatching,boolean,False,Allow create_ip to override the version field if no match is found,0
 ips.downgradeIPIdentifiedWarnings,boolean,False,Inserts the 'DowngradeIPIdentifiedWarnings' pragma into generated HDL synthesis wrappers,1
 ips.dumpIPDebugData,boolean,False,Dumps the IP defs' debug data,0
-ips.dumpLockData,boolean,False,,0
+ips.dumpLockData,boolean,False,Dumps the IP instance lock data,0
 ips.dumpTmpIPDataPtrs,boolean,False,Dumps the tmp IPData ptrs during and after IP Catalog load,0
 ips.enableAggressiveVIP,boolean,False,"If set to true, all AXIMM interfaces will have the AXI VIP inserted onto them.",0
 ips.enableAllDefaultHDLTemplates,boolean,False,Enables the generation of both VHDL and Verilog HDL default instantiation templates when either is selected,1
@@ -588,7 +588,7 @@ ips.enableInterfaceArrayInference,boolean,False,run heuristic to recognize inter
 ips.enableIPCacheForModRefIPInst,boolean,False,Enable IP Caching for module reference IP,0
 ips.enableIPCacheForUserIP,boolean,False,Enable IP Caching for custom IP,1
 ips.enableIPCacheLiteLoad,boolean,False,Set this flag to enable lite-loading of IP instance cache entries.,1
-ips.enableIPCacheLocking,boolean,False,,1
+ips.enableIPCacheLocking,boolean,False,Enable IP Caching lock file usage,1
 ips.enableIPCacheLogsDir,boolean,False,Turn on creation of the IP Cache entry logs directories,0
 ips.enableIPCacheMultiThreading,boolean,False,Enable IP Cache multi-threading for export option,1
 ips.enableIpOutputDirectory,boolean,False,Enable IP output directory selection for delivery of IP output products,0
@@ -654,7 +654,7 @@ ips.synthesis.subCoreNoWorkLibName,boolean,False,Use top HDL file's library inst
 ips.threadLimit,integer,False,maximum of threads created,10
 ips.unifiedDataModelBlackList,boolean,False,Temporary switch to force blacklist IP to declare support for the unified data model,1
 ips.uniqueLabtoolsCacheInstIds,boolean,False,Set this flag to cause Labtools internally cached IP instances to have different cache IDs than normal IP.,1
-ips.useInterfaceDependencyCheck,boolean,False,,0
+ips.useInterfaceDependencyCheck,boolean,False,Use strict interface dependency validation to ensure subcore dependencies exist in appropriate file groups.,0
 ips.useIPCacheHLSCrc,boolean,False,"For HLS-generated IP, use a checksum of component checksums and ignore the core revision in the cache-id.",1
 ips.useModRefInferredIPBlackList,boolean,False,Use the Black list to get the supported IP components for module reference RTL-inferred IP.,1
 ips.useModRefInferredIPWhiteList,boolean,False,Use the White list to get the supported IP components for module reference RTL-inferred IP.,0
@@ -952,22 +952,22 @@ logicopt.resynthBailOutLimit,integer,False,Flow bailout after certain number of 
 logicopt.resynthCalibrateLUTLib,boolean,False,Calibrate LUT lib,1
 logicopt.resynthCARRY4AsBox,boolean,False,Module CARRY4 as white box (default is true),1
 logicopt.resynthCarry4NewModel,boolean,False,Model Carry with one logic level,1
-logicopt.resynthCheckWNSAfterChange,boolean,False,Minimum slack improvement require when moving instances across an IO Column,0
+logicopt.resynthCheckWNSAfterChange,boolean,False,No description available,0
 logicopt.resynthCostArea,boolean,False,Cost ABC transformation with area,0
 logicopt.resynthCostDelay,boolean,False,Cost ABC transformation with delay,0
 logicopt.resynthCostIgnoreInv,boolean,False,"Cost ABC transformation default count, ignore inverters",0
 logicopt.resynthCostInvDivisor,integer,False,How much to reduce weight of inverter?,1
-logicopt.resynthDebugStitching,boolean,False,skip -m option for ABC *r command,0
+logicopt.resynthDebugStitching,boolean,False,No description available,0
 logicopt.resynthDefaultNameSuffix,string,False,default suffix to append to changed instances,_
 logicopt.resynthDefineConsts,boolean,False,"Tell ABC what's consts, so it can optimize them away",0
-logicopt.resynthDeterministicIdSequence,boolean,False,,1
-logicopt.resynthDisableArrReq,boolean,False,Enables rePlacing of SRLs in post-place mode,1
-logicopt.resynthDisableArrReqCache,boolean,False,x-radius used for control set computation in GP,1
+logicopt.resynthDeterministicIdSequence,boolean,False,"Generate deterministic netlist ID sequence during out-of-order netlist transformation, e.g. instance IDs",1
+logicopt.resynthDisableArrReq,boolean,False,No description available,1
+logicopt.resynthDisableArrReqCache,boolean,False,No description available,1
 logicopt.resynthDumpBlifDir,string,False,Directory to save before/after BLIF files,None
 logicopt.resynthDumpVerilog,boolean,False,Dump verilog netlist before and after ABC changes,0
 logicopt.resynthEnableTimer,boolean,False,Enable timer and use timing in ABC,1
 logicopt.resynthFlowScript,string,False,abc flow script filename (default is empty),None
-logicopt.resynthForceCreateEndpoint,boolean,False,Temporary param to allow enabling functionality where CMB pin phase can be treated as either latency or waveform shift,1
+logicopt.resynthForceCreateEndpoint,boolean,False,No description available,1
 logicopt.resynthGuardLevs,integer,False,Check logic level increases in costing (default is 0 (no logic level increase allowed)),0
 logicopt.resynthGuideFile,string,False,Guide file for resynthesis guide flow,None
 logicopt.resynthIfDelayTarget,boolean,False,Mapper delay target,1
@@ -1001,7 +1001,7 @@ logicopt.resynthPartSize,integer,False,Partition size,5000
 logicopt.resynthPropConstAfter,boolean,False,Do const prop after Resynth,1
 logicopt.resynthPushPullInv,boolean,False,Push/Pull inverters after resynth,1
 logicopt.resynthReverseJobOrder,boolean,False,Reverse the order in which jobs/modules are run,0
-logicopt.resynthRevisedRead,boolean,False,,0
+logicopt.resynthRevisedRead,boolean,False,skip -m option for ABC *r command,0
 logicopt.resynthSaveBest,boolean,False,Save best intermediate result,1
 logicopt.resynthSaveGuide,string,False,Save Guide file for resynthesis,None
 logicopt.resynthSendEverything,boolean,False,Optimize all LUTs,0
@@ -1041,7 +1041,7 @@ logicopt.thresholdToApplyPredictiveCanOptInNLOptRemap,integer,False,"If enablePr
 logicopt.unrollSRLDrivingHFN,boolean,False,Dissolve SRL driving net with HFN bufg insertion directly or through flop,1
 logicopt.upgradeWarningsToErrors,boolean,False,Upgrade some of the logic-opt warning messages to error messages (default: off),0
 logicopt.wireSRLOutToUseCascadeOut,boolean,False,Enable connecting cascade out pin when SRLs are cascaded .,1
-logicopt.writeMandatoryLogicOptVerilog,boolean,False,,0
+logicopt.writeMandatoryLogicOptVerilog,boolean,False,write Verilog before and after mandatory logic opt (default: off),0
 memdata.forceMemoryInitForProject,boolean,False,"Force the memory initialization to occur a project. This param might be used for when combining dcp files, RTL Kernel flow or when stitching dcp files and then link design. Memory initialization still might still fail for various other reasons.. Default is false.",0
 messaging.debugIPFilters,boolean,False,Display extra information about processing of IP message filters (default: false),0
 messaging.debugMessageName,string,False,Message,None
@@ -1115,13 +1115,13 @@ physdb.placeDBIO.useNewCellViewIO,boolean,False,When using PlaceDB read/write us
 physdb.resetSyncAttrOnGNDRstOrClr,boolean,False,Reset the Sync attibute to Sync or Async to allow better packing and avoid bitgen errors.,1
 physdb.siteTraversal.useNewRoutedSite,boolean,False,Use the new HDPYNewRoutedSite with HDPYSiteTraversal.,0
 physdb.strictlyValidateDeviceAndPackage,boolean,False,"When reading XDEF, print a CRITICAL WARNING and do not restore placement and routing information unless device and package are identical.",0
-physdb.usePlaceDBIO,boolean,False,,1
+physdb.usePlaceDBIO,boolean,False,Use PlaceDB read/write for DCP files.,1
 physdb.warnOnNoParamBelRouteThru,boolean,False,print warnings when BEL Route-Thrus are used where the route-thru does not require any attributes to be set.,0
 physdb.XDEF.allowIserdesClkInvMismatch,boolean,False,Allow the inversion state of the CLK and CLKB pins to not be tied together when DATA_RATE is set to DDR.,0
 physdb.XDEF.createMuxRoutingBels,boolean,False,Creates routing bels for routing muxes in a site. Used by GOQ for more verbosity when testing.,0
 physdb.XDEF.debugDumpRoutedSite,boolean,False,Debug dump of old and new routed site for comparison.,0
 physdb.XDEF.debugRoutedSiteCache,integer,False,Used for debugging HDPYRoutedSiteCache event handlers.,-1
-physdb.XDEF.ignoreDeviceMismatch,boolean,False,,0
+physdb.XDEF.ignoreDeviceMismatch,boolean,False,When reading/writing XDEF ignore the fact a different device is being loaded.,0
 physdb.XDEF.useNewRoutedSite,boolean,False,Creates a HDPYNewRoutedSite under the covers instead of a HDPYRoutedSiteOld.,0
 physdb.XDEF.usePlaceDBSourceForNewRoutedSite,boolean,False,Creates a HDPYNewRoutedSite under the covers instead of a HDPYRoutedSiteOld using PlaceDB as the source for net proxy mappings.,0
 physdb.XDEF.useRawNames,boolean,False,When reading/writing XDEF use raw names.,0
@@ -1408,7 +1408,7 @@ physynth.incrCompileRebuildShapeDB,boolean,False,Rebuild shapeDB at the end in i
 physynth.incrPlaceNetlist,boolean,False,Update placeNetlist incrementally during Physical Synthesis (default: on),1
 physynth.incrUpdateClockTree,boolean,False,Incrmental update clock gap tree (default: on),1
 physynth.incrUpdateClockTreeForHDFlow,boolean,False,Allow incr update clock gap tree in HD flow (default: on),1
-physynth.incrUpdateRoutingNodeTable,boolean,False,,1
+physynth.incrUpdateRoutingNodeTable,boolean,False,Update routing node table incrementally,1
 physynth.incrUpdateRoutingNodeTableDebug,boolean,False,Enable debugging of incremental update of routing node table,0
 physynth.instanceLockPinCheck,boolean,False,instance (vs pin) check for LOCKPIN (default: on),1
 physynth.interLoopCntPR,integer,False,iteration loop for PR (default: 1),1
@@ -1449,7 +1449,7 @@ physynth.ltTimerCopyConstr,boolean,False,In lite timer copy constraints (default
 physynth.LUTDecompHFOLimit,integer,False,Set the net fanout limit to be considered hfo net,20
 physynth.LUTDecompHFOPin,integer,False,Set the hfo net pin count,3
 physynth.LUTDecompLimit,integer,False,Set the max number of LUTs to be deomposed,100000
-physynth.LUTDecompMaxPerBin,integer,False,,2
+physynth.LUTDecompMaxPerBin,integer,False,Set the max number of LUTs to be deomposed per bin,2
 physynth.LUTDecompSlackThreshold,float,False,The slack threshold for LUT6 to decomposs in ns,0
 physynth.LUTDecompUpperCong,float,False,The upper congestion limit to count instance,2
 physynth.LUTtoLUT1collapse,boolean,False,Enable LUT to LUT1 collapsing (default: false),0
@@ -1570,14 +1570,14 @@ physynth.pipelineAssertVerifFailure,boolean,False,Throw assert if verification f
 physynth.pipelineCutName,string,False,Custom prefix string for pipeline registers (default empty string,None
 physynth.pipelineDebug,integer,False,Show debug stuff,0
 physynth.pipelineDumpDeviceFmaxOnly,boolean,False,Just dump device fmax and exit,0
-physynth.pipelineDumpSCC,boolean,False,,0
+physynth.pipelineDumpSCC,boolean,False,Dump SCCs to JSON file,0
 physynth.pipelineFullGraph,boolean,False,Use full graph flow,1
-physynth.pipelineIgnoreVerifFailures,boolean,False,Dump SCCs to JSON file,0
+physynth.pipelineIgnoreVerifFailures,boolean,False,No description available,0
 physynth.pipelineInsertCheckOverUtil,boolean,False,Check util and prevent overutil solution,1
 physynth.pipelineInsertCheckRoutability,boolean,False,Check Rent param and prevent overcongested solution,0
 physynth.pipelineInsertMaxCuts,integer,False,Max cuts to make,-1
 physynth.pipelineInsertOneCutAtATime,boolean,False,Insert registers one cut at a time; re-evaluate after each cut,1
-physynth.pipelineNumCritPathsToCut,integer,False,Verbose log for delay cleanup,-1
+physynth.pipelineNumCritPathsToCut,integer,False,No description available,-1
 physynth.pipelineSCCMinDepthForAnalysis,integer,False,Min hierarchy depth to consider in SCC analysis,-1
 physynth.pipelineShowOldTables,boolean,False,"Show old tables, in addition to Ron's new tables",0
 physynth.pipelineSplitVHFN,boolean,False,force split vhfn > 50000,0
@@ -1608,7 +1608,7 @@ physynth.postPhaseTclCmd,string,False,Post each opto phase run tcl cmd (default:
 physynth.postPlaceRunPathOptFirst,boolean,False,Run path based opt first,0
 physynth.postPlaceSkipRebuildShape,boolean,False,Skip rebuild shape after postplace phys_opt,0
 physynth.postPSFPTclCmd,string,False,Post PSFP tcl command,None
-physynth.postPSFPWriteXdef,string,False,,None
+physynth.postPSFPWriteXdef,string,False,write out XDEF after PSIP,None
 physynth.postPSHMWriteXdef,string,False,write out XDEF after PSIP,None
 physynth.postPSIPTclCmd,string,False,Post PSIP tcl command,None
 physynth.postPSIPWriteXdef,string,False,write out XDEF after PSIP,None
@@ -1655,7 +1655,7 @@ physynth.psbfUseRoundRobinWithCtrlLoads,boolean,False,"In PSBF, use round robin 
 physynth.psipAllowSlackDegrade,float,False,Allow amount of net slack degradation in ns (default 0.15),0.15
 physynth.psipAllowWnsDegrade,float,False,Allow amount of WNS degradation in ns (default 0),0
 physynth.psipAtSteps,string,False,"Specifies the steps within placer that physical synthesis should be run. Can be any combination of the following. BEFORE_QPILR,IN_QPILR,GLOBAL_PLACEMENT",BEFORE_QPILR
-physynth.psipBRAMOptMarginPct,float,False,,30
+physynth.psipBRAMOptMarginPct,float,False,Specifies period based margin for DSP flop based optimization (default: 30 (%)),30
 physynth.psipBRAMOptNumLimit,integer,False,specifies maxium number of bram cells to be optimized (default: 100) Value should be >= 1 and <= 10000,100
 physynth.psipCallPipelinePlacer,boolean,False,Use Pipeline Placer to place pipeline registers (default: off),0
 physynth.psipCanPackShape,boolean,False,check shape packing before removing a cell from shape (default: on),1
@@ -1728,7 +1728,7 @@ physynth.replaceAgainAtEnd,boolean,False,Perform replace opt again at the end fo
 physynth.replaceCheckEstDlyB4Route,boolean,False,Check estimated delay for improvement before trying route,0
 physynth.replaceEarlyExit,boolean,False,Enables early exit (default: on),1
 physynth.replaceEarlyExitPerc,float,False,Early exit margin perce definition,0.005
-physynth.replaceEnableSRL,boolean,False,,1
+physynth.replaceEnableSRL,boolean,False,Enables rePlacing of SRLs in post-place mode,1
 physynth.replaceEnableSRLPR,boolean,False,Enables rePlacing of SRLs in post-route mode,1
 physynth.replaceFlopToFlop,boolean,False,Replace Flop to Flop.,1
 physynth.replaceForceCommit,boolean,False,Enables force commit (default: off),0
@@ -1865,7 +1865,7 @@ physynth.retimingShapeDbgInstName,string,False,Internal debugging for the shape 
 physynth.retryWithReplaceNeighbors,boolean,False,Retry Replacing together with replacing neighbor instances.,0
 physynth.retryWithReplaceNeighborsPostPlace,boolean,False,Retry Replacing together with replacing neighbor instances.,0
 physynth.rewireAllowBuf,boolean,False,allow buffering for rewiring (default: off),0
-physynth.rewireAllowRepl,boolean,False,,1
+physynth.rewireAllowRepl,boolean,False,allow replication for rewiring (default: on),1
 physynth.rewireAllowSwap,boolean,False,allow swap during replication (default: on),0
 physynth.rewireBipartiteSwap,boolean,False,Swapping fanins for wide gates/tree of gates using bipartite method (default: on),1
 physynth.rewireBruteForceSignalSwap,boolean,False,Swapping fanins for wide gates/tree of gates using greedy approach (default: off),0
@@ -2089,7 +2089,7 @@ place.bufgTryRoute,boolean,False,Bufg Insertion try route before netlist change,
 place.buildLHView,boolean,False,Build logic hierarchy view to be used in vPart,1
 place.buildMacroGraph,boolean,False,Build macro graph,0
 place.buildShapes,boolean,False,Build all placer shapes,1
-place.buildSliceDataMatrix,boolean,False,,1
+place.buildSliceDataMatrix,boolean,False,Build place group slice data matrix,1
 place.buildTermInfoVecCache,boolean,False,Build and use TermInfo Cache for clock pins,1
 place.buildTimingModels,boolean,False,Build Placer Timing Models,1
 place.cacheClkPinData,boolean,False,Build and use TermInfo Cache for clock pins,1
@@ -2184,7 +2184,7 @@ place.createRouteGraphMinLuts,integer,False,Min number of LUTs required to creat
 place.createRouteGraphMinSites,integer,False,Min number of LUTs required to create routing graph,300000
 place.createRouteGraphThreads,integer,False,self explanatory,4
 place.crossingSLRPenalty4dontCross,integer,False,SLR crossing penalty in ps for don't cross connections,-5000
-place.crossingSLRPenalty4highPriorityCons,integer,False,,0
+place.crossingSLRPenalty4highPriorityCons,integer,False,SLR crossing penalty in ps for high priority connections,0
 place.crossProbeMessages,boolean,False,Attach meta type information for placer messages.,1
 place.cutIOBeforeSLR,boolean,False,"Do IO Cuts before doing the BALI SLR Cuts, this is to make sure IOs have better partitioning.",0
 placedata.dontAddFFsToSRLLutRamShapesV7,boolean,False,do not add optional FFs to LUTRAM or SRL shapes for V7,0
@@ -2367,7 +2367,7 @@ place.DPTimingMaxWeight,float,False,Timing weight for the most critical connecti
 place.DPTimingMaxWeightMultiplier,float,False,Adjustment to place.DPTimingMaxWeight,1
 place.DPTimingMaxWeightMultiplierMono,float,False,Adjustment to place.DPTimingMaxWeight,0.2
 place.DPTimingStartIteration,integer,False,Iteration where timing driven flow is turned on in DP,0
-place.DPTimingUpdateFrequency,integer,False,,3
+place.DPTimingUpdateFrequency,integer,False,Update timing every n iterations in DP,3
 place.DPTimingWeightFactor,float,False,Strength of timing weight compared to wirelength,-1
 place.DPTimingWeightFactorMultiplier,float,False,Adjustment to place.DPTimingWeightFactor,0.25
 place.DPTimingWeightFactorMultiplierMono,float,False,Adjustment to place.DPTimingWeightFactor,0.1
@@ -2416,7 +2416,7 @@ place.emulationModeV7Fuse,boolean,False,Fuse for turning on emulation mode in V7
 place.enableBufgceRowLeaf,boolean,False,allow BUFGCE_ROW and BUFGCE_LEAF instances,0
 place.enableClusterSwap,boolean,False,Enable Cluster based Area Swap,0
 place.enableCongPlacer,boolean,False,Enable congestion placer,0
-place.enableCrossDomainClockSupport,boolean,False,,0
+place.enableCrossDomainClockSupport,boolean,False,Enable same SLR placement of clock drivers of source and load flops for SSI devices,0
 place.enableDDRMCRelatedLOCCheck,boolean,False,Param to control whether to check DDRMC related LOC constraints,0
 place.enableDelayEstPlty,float,False,This is the delay penality to be added to the existing delay.,1.1
 place.enableDrcVerbose,boolean,False,Print verbose info during placer DRC checks,0
@@ -2426,7 +2426,7 @@ place.enableEverestCapLegalization,boolean,False,Enable capacity legalization fo
 place.enableEverestClocking,boolean,False,Enable Everest clock region partitioning and routing,1
 place.enableExternalDetailPlacer,boolean,False,Enable an external placer for detail placement,0
 place.enableExtraDelayEstPlty,float,False,This is the extra delay penality to be added to the existing delay.,1.15
-place.enableExtraDelayFanout,integer,False,,30
+place.enableExtraDelayFanout,integer,False,This enables the extra delay to be inserted for Fanout more than this factor,30
 place.enableExtraDelayPenalty,boolean,False,This enables the extra delay to be inserted for which can be controled using next 3 params,0
 place.enableExtraDelaySpan,integer,False,This enables the extra delay to be inserted for Span more than this factor,36
 place.enableGTPinmap,boolean,False,Temporary param to enable GT Pin mapper testing,1
@@ -2474,7 +2474,7 @@ place.estimateClockSpineReduction,boolean,False,Used BinPacking and estimate upp
 place.evalarch.16nmAOAGenReports,boolean,False,Diablo AOA report generation,0
 place.evalarch.16nmAOAOptBalanceUtil,integer,False,Diablo AOA Opt Balance utilization,0
 place.evalarch.16nmAOAOpt,boolean,False,Diablo AOA Post-Placement Optimizer,0
-place.evalarch.16nmAOAOptMaxMoves,integer,False,,1
+place.evalarch.16nmAOAOptMaxMoves,integer,False,Diablo AOA Opt Moves Per pass,1
 place.evalarch.16nmAOAOptNetCutMax,integer,False,Diablo AOA Cut to Opt,4
 place.evalarch.16nmAOAOptPass1,integer,False,Diablo AOA Opt Pass 1 count,10
 place.evalarch.16nmAOAOptPass2,integer,False,Diablo AOA Opt Pass 2 count,10
@@ -2518,7 +2518,7 @@ place.evalarch.fastConnectMuxNameBase,string,False,Fast Connect Mux Name,IMUX
 place.evalarch.FCOptTimingEnable,boolean,False,Enable monitoring of timing between tasks,0
 place.evalarch.forcePCOpt,boolean,False,"Run PCOpt in any mode (NTD or emulation mode, etc)",0
 place.evalarch.forceShapesBuiltPPOMode,boolean,False,Force shapes built in PPO mode.,0
-place.evalarch.interconnectARMultiplier,float,False,,1
+place.evalarch.interconnectARMultiplier,float,False,lnvalue * ln({value} * (INTRows / INTCols)) + offset,1
 place.evalarch.ioPlacementSupported,boolean,False,IO Placement is Supported (Only works in Vorpal Lite Based Devices),0
 place.evalarch.legalizeSLLBeforeILR,boolean,False,Legalize Super Longs before ILR Iterations,0
 place.evalarch.LF6L5ShapeChange,boolean,False,Change LF6L5 Shape to LF5L6 placement,0
@@ -2627,7 +2627,7 @@ place.GPB2BWeightSLLNetXspanThreshold,float,False,SLL congestion threshold for X
 place.GPBramDSPFix,boolean,False,After GP fix the BRAM and DSP and redo global placement,0
 place.GPCarryMode,integer,False,Control carry placement in SimPL,3
 place.GPCarryPenalty,float,False,Specify additional penalty for carries in SimPL,0
-place.GPClockRegionULRatioTrigger,float,False,"0 means NO update, other numbers corresponding to different methods",0
+place.GPClockRegionULRatioTrigger,float,False,No description available,0
 place.GPCollectData,boolean,False,internal boolean flag for SSI devices,0
 place.GPCongestionOptimizationSeparation,integer,False,Specify minimum separation between congestion optimization in GP,3
 place.GPCongestionOptimizationUtilizationThresholdEmulation,float,False,Specify utilization threshold for congestion optimization in emulation mode,20
@@ -2682,7 +2682,7 @@ place.GPDynamicFFAreaAdjustmentModeling,integer,False,Specify modeling on dynami
 place.GPDynamicFFAreaAdjustmentPBlockSnapping,boolean,False,Perform control set analysis after pblock snapping,0
 place.GPDynamicFFAreaAdjustmentUtilizationThreshold,float,False,Specify utilization threshold below which dynamic FF area adjustment is activated,3.40282e+38
 place.GPDynamicLutRamAreaAdjustmentAlpha,float,False,Multiplier used for dynamic LutRam area adjustment in GP,1
-place.GPDynamicLutRamAreaAdjustmentDeltaX,integer,False,,6
+place.GPDynamicLutRamAreaAdjustmentDeltaX,integer,False,x-radius used for control set computation in GP,6
 place.GPDynamicLutRamAreaAdjustmentDeltaY,integer,False,y-radius used for control set computation in GP,6
 place.GPDynamicLutRamAreaAdjustmentDynamicDeltaX,boolean,False,Dynamically control x-radius used for control set computation in GP,1
 place.GPDynamicLutRamAreaAdjustmentDynamicDeltaY,boolean,False,Dynamically control y-radius used for control set computation in GP,1
@@ -2693,27 +2693,27 @@ place.GPEpsilonInit,float,False,Minimum distance to be used in initial bound2bou
 place.GPFFAreaBloatingFactor,float,False,"Specify a bloating factor for flop area, 0 = automatic",0
 place.GPFinalOptimLocMoves,boolean,False,Do Optim loc moves to improve final legalized locations in simPL flow.,1
 place.GPFixSLLInSolve,boolean,False,internal boolean flag,1
-place.GPFlowControlVerbose,integer,False,Compute crit using def flow mechanism,0
+place.GPFlowControlVerbose,integer,False,No description available,0
 place.GPForceCarryLegalization,boolean,False,Force carry legalization in SimPL,0
 place.GPForceControlSetHeuristic,boolean,False,Force control set heuristic in GP,0
 place.GPForceDynamicFFAreaAdjustment,boolean,False,Force dynamic FF area adjustment in GP,0
 place.GPHighUtilizationMacroPenalty,float,False,Specify additional penalty for high utilization macros in SimPL,0.5
 place.GPIgnoreConvergenceCriteria,boolean,False,Ignore convergence criteria in SimPL,0
-place.GPIgnoreStraddlingMacro,boolean,False,Limiter on the size of the module for rent parameter calulation in multi-thread mode,0
+place.GPIgnoreStraddlingMacro,boolean,False,No description available,0
 place.GPILRMaxBloat,integer,False,ILR max bloat in GP mode Value should be >= 2 and <= 5,2
-place.GPInitQPPBlockAnchorWeight,float,False,Enable exporting of platform files to SDK,0
+place.GPInitQPPBlockAnchorWeight,float,False,No description available,0
 place.GPInitWeightCompRatio,float,False,ratio used to compute initial anchor force weight,0
-place.GPInitWeight,float,False,,0
+place.GPInitWeight,float,False,No description available,0
 place.GPIterLimitMoveRange,boolean,False,Limit move distance in GP iteration,0
 place.GPIterLimitMoveRangeDebug,integer,False,debug for move range limit,0
 place.GPKeepOriginalMatrix,boolean,False,Keep the last matrix from the initial B2B iterations for the rest of SimPL run,0
 place.GPKeepOriginalMatrixFrequency,integer,False,Activate place.GPKeepOriginalMatrix once in a specified number of iterations,-1
-place.GPLegalDerateZABlockMoves,float,False,Parameter controlling minimum number of threads for neighbor move,1
+place.GPLegalDerateZABlockMoves,float,False,No description available,1
 place.GPLegalExpandMode,integer,False,how we expand seed rect during spreading,1
 place.GPLegalizationPSblockage,boolean,False,Control legalization with PS blockage,0
 place.GPLegalizationThreshold,float,False,Specify a factor to be used to determine minimum size rectangles in SimPL legalization,1
 place.GPLegalizeBigShapes,boolean,False,"During SimPL legalization step, properly legalize big shapes by spreading their area.",1
-place.GPLegalStretchZABlocks,boolean,False,"Specifies when to split SLR crossing nets by dummy blocks. The value can be : empty string which means do not split nets 'GP' which means split nets in global placer and keep them split for remaining part of placer 'DP' which means split nets in detail placer and keep them split for remaining part of placer any combination of 'BigShape', 'SmallShape' and 'FF' which means split nets to specified detail placement step and restore nets after that step is done",0
+place.GPLegalStretchZABlocks,boolean,False,No description available,0
 place.GPLegalTypeSortNew,boolean,False,how we sort legalization types,0
 place.GPLocsFileName,string,False,Dump placement for GUI after GP,None
 place.GPLongCongestionOptimization,boolean,False,Run long congestion optimization,0
@@ -2733,7 +2733,7 @@ place.GPMinIterations,integer,False,Absolute minimum number of iterations in Sim
 place.GPNetSizeThresholdForCritTermWeight,integer,False,Crit term weight update net size threshold,3000
 place.GPNetSizeThreshold,integer,False,Ignore nets larger than a given threshold in SimPL,-1
 place.GPNonOverlappingBloating,boolean,False,Enable non-overlapping bloating in legalization,1
-place.GPNucleationIter,integer,False,Number of digits to be used after decimal point for switching activity on schematic,0
+place.GPNucleationIter,integer,False,No description available,0
 place.GPNumAdditionalCongestionOptimization,integer,False,Specify number of additional congestion optimization,0
 place.GPNumCongestionOptimizationEmulation,integer,False,Specify number of congestion optimization in emulation mode,2
 place.GPNumCongestionOptimization,integer,False,Specify number of congestion optimization,1
@@ -2742,28 +2742,28 @@ place.GPNumMacroPlacerCallsEmulation,integer,False,Number of macro placer calls 
 place.GPNumMacroPlacerCalls,integer,False,Number of macro placer calls,1
 place.GPNumReparPhase,integer,False,Run a number of 'Repar Phases' i.e. re-partition following SimPL to try to get a better placement,0
 place.GPOptimLocMoves,integer,False,"Do Optim loc moves to improve legalized locations in simPL flow. 0: off, 1: on, 2: on with exclude pblocks",2
-place.GPPackClusterBreakSize,integer,False,Fanout threshold when expanding from congested region,-1
-place.GPPackClusterSize,float,False,When to use ATree cong est,-1
-place.GPPackCtrlSetMaxSize,integer,False,Enable one more free res hold iter.,-1
-place.GPPackCtrlSetScoreFact,float,False,Threshold Stale edges to consider for timing,-1
-place.GPPackDirectPackFact,float,False,Dumps the IP instance lock data,-1
-place.GPPackHifanNetWeight,float,False,Specifies period based margin for DSP flop based optimization (default: 30 (%)),-1
-place.GPPackIterDistIncr,float,False,param to turn on updating clock trees in ILR iterations,-1
-place.GPPackIterGridDistIncr,float,False,Diablo AOA Opt Moves Per pass,-1
-place.GPPackMaxTimingWeight,float,False,Update timing every n iterations in DP,-1
-place.GPPackPreClusterCtrlSetFF,integer,False,,0
-place.GPPackPreClusterLUTFF,integer,False,allow replication for rewiring (default: on),0
-place.GPPackStopMinIter,integer,False,Enable same SLR placement of clock drivers of source and load flops for SSI devices,-1
-place.GPPackStopRatio,float,False,This enables the extra delay to be inserted for Fanout more than this factor,-1
-place.GPPackStrangerEquivDist,float,False,Use the new getline on read_xdc.,-1
-place.GPPackStrangerMaxCand,integer,False,,0
-place.GPPackStrongMaxFan,integer,False,Use PlaceDB read/write for DCP files.,0
-place.GPPackTargetUtil,float,False,Write contents of hierarchical primitives created by funnel,-1
-place.GPPackTraceBlockId,integer,False,"Generate deterministic netlist ID sequence during out-of-order netlist transformation, e.g. instance IDs",-1
-place.GPPackTraceClusterId,integer,False,internal dev double value for maogangw,-1
-place.GPPackTraceStartIter,integer,False,Maximum number of threads created for report_power. A non-zero value will override any value set for global.maxThreads. A zero value (default) indicates this param should be ignored. Value should be >= 0 and <= 24,-1
-place.GPPackVerbose,integer,False,Enable IP Caching lock file usage,1
-place.GPPackWeakMaxFan,integer,False,number of unplaced instances in DP which trigger network flow,0
+place.GPPackClusterBreakSize,integer,False,No description available,-1
+place.GPPackClusterSize,float,False,No description available,-1
+place.GPPackCtrlSetMaxSize,integer,False,No description available,-1
+place.GPPackCtrlSetScoreFact,float,False,No description available,-1
+place.GPPackDirectPackFact,float,False,No description available,-1
+place.GPPackHifanNetWeight,float,False,No description available,-1
+place.GPPackIterDistIncr,float,False,No description available,-1
+place.GPPackIterGridDistIncr,float,False,No description available,-1
+place.GPPackMaxTimingWeight,float,False,No description available,-1
+place.GPPackPreClusterCtrlSetFF,integer,False,No description available,0
+place.GPPackPreClusterLUTFF,integer,False,No description available,0
+place.GPPackStopMinIter,integer,False,No description available,-1
+place.GPPackStopRatio,float,False,No description available,-1
+place.GPPackStrangerEquivDist,float,False,No description available,-1
+place.GPPackStrangerMaxCand,integer,False,No description available,0
+place.GPPackStrongMaxFan,integer,False,No description available,0
+place.GPPackTargetUtil,float,False,No description available,-1
+place.GPPackTraceBlockId,integer,False,No description available,-1
+place.GPPackTraceClusterId,integer,False,No description available,-1
+place.GPPackTraceStartIter,integer,False,No description available,-1
+place.GPPackVerbose,integer,False,No description available,1
+place.GPPackWeakMaxFan,integer,False,No description available,0
 place.GPPartPinWeightFactor,float,False,Factor to be multiplied for HD flow partition pin forces,2
 place.GPPBlock,boolean,False,Limit move distance in GP iteration,0
 place.GPPBlockCenterAsAnchorLocation,boolean,False,Use PBLOCK center as anchor locataion,0
@@ -2780,7 +2780,7 @@ place.GPReparPhaseDecision,integer,False,-1: always revert to previous result; 0
 place.GPReportBloatedCells,boolean,False,Report cells bloated in GP,0
 place.GPSeedRectAspectRatio,float,False,Worst seed rectangle aspect ratio in legalization,5
 place.GPShortCongestionOptimization,boolean,False,Run short congestion optimization,1
-place.GPSimPLFlowUsePBlockAnchor,boolean,False,Use strict interface dependency validation to ensure subcore dependencies exist in appropriate file groups.,0
+place.GPSimPLFlowUsePBlockAnchor,boolean,False,No description available,0
 place.GPSkipFinalLegalization,boolean,False,Skip final legalization,0
 place.GPSLLSpreadAddAnchor,boolean,False,add more anchor after SLL spreading in SimPL GP,1
 place.GPSLLSpread,boolean,False,Turn on SLL spreading in SimPL GP,0
@@ -2817,7 +2817,7 @@ place.GPTimingUpdateFrequency,integer,False,"Update timing every n iterations, d
 place.GPTimingUseLegalPlacement,integer,False,"Use legalized placement for update timing during global placement: 0: no, 1: yes, 2: yes if excluded pblocks exists, 3: dynamically adjust if excluded pblock exists",0
 place.GPTimingWeightDecayFactor,float,False,"Timing weight decay factor in each iteration, i.e. w_curr = k * w_prev, k = 1.0 means no decay",0.8
 place.GPTimingWeightFactor,float,False,Strength of timing weight compared to wirelength,-1
-place.GPUpdateSLLMethod,integer,False,,4
+place.GPUpdateSLLMethod,integer,False,"0 means NO update, other numbers corresponding to different methods",4
 place.GPUseBudgeter,boolean,False,Use fast budgeter in timing driven SimPL flow,1
 place.GPUseFFAreaHeuristic,boolean,False,Use FF area heuristic in GP,1
 place.GPUseLegalPlacementForCongestion,boolean,False,Use legal placement for congestion optimization,0
@@ -2850,17 +2850,17 @@ place.highPriorityClkTargetSlack,integer,False,Target slack for high priority cl
 place.hmAdjustCutsMinBinSize,integer,False,HMPlacer adjustBinCenters min bin size,80
 place.HMetisCostScheme,integer,False,value is defined as enum HAPLFHMCtrls::HMCostScheme,0
 place.HMetisCutCostFact,float,False,"in HMetis, the cut-cost factor, default is 0.1",0.1
-place.HMetisExecuteMode,integer,False,SLR crossing penalty in ps for high priority connections,0
-place.HMetisMaxEdge4AdjG,integer,False,lnvalue * ln({value} * (INTRows / INTCols)) + offset,-1
-place.HMPartAreaUtilCostFactCut1,float,False,write out XDEF after PSIP,-1
-place.HMPartAreaUtilCostFactCut2,float,False,,-1
-place.HMPartAreaUtilCostFact,float,False,Riviera-PRO installation path,-1
+place.HMetisExecuteMode,integer,False,No description available,0
+place.HMetisMaxEdge4AdjG,integer,False,No description available,-1
+place.HMPartAreaUtilCostFactCut1,float,False,No description available,-1
+place.HMPartAreaUtilCostFactCut2,float,False,No description available,-1
+place.HMPartAreaUtilCostFact,float,False,No description available,-1
 place.HMPartFFTargetUtil,float,False,"FF target util used per type in HM-Part, default is auto-determined",0
 place.HMPartMaxFanout,integer,False,Max Fanout nets considered in HMPlacer,10000
-place.HMPartMaxSLRCutRepCnt,integer,False,Use multi corner mode for the timer.,-1
+place.HMPartMaxSLRCutRepCnt,integer,False,No description available,-1
 place.HMPartRedoFirstSLRCut,integer,False,"In 3-SLR device, re-do first cut at level-1",0
 place.HMPartTargetUtil,float,False,target util used in HM-Part,0.7
-place.HMPartUseBug,integer,False,Update routing node table incrementally,0
+place.HMPartUseBug,integer,False,No description available,0
 place.hmplacerMinBinSize,integer,False,HM Placer min bin size,10
 place.hmTargetUtil,float,False,HMPlacer target utilization,0.7
 place.holdTimeReport,boolean,False,Turn on hold time report.,0
@@ -2957,7 +2957,7 @@ place.incremental.GPlegalizeMore,boolean,False,target lower MaxUtil and UtilLeve
 place.incremental.handleClockRouting,boolean,False,Try Reuse of clock net routing in incr-flow specific clock placer,0
 place.incremental.handleClockRoutingInRCI,boolean,False,Try Reuse of clock net routing in RCI,1
 place.incremental.highGuidedWLThreshold,float,False,percent guidance threshold to disable ILR,90
-place.incremental.horizontalHistoryCoeff,float,False,,0.5
+place.incremental.horizontalHistoryCoeff,float,False,No description available,0.5
 place.incremental.improveTiming,boolean,False,improve Timing,0
 place.incremental.incrClockRouting,integer,False,Run count of incr-flow specific clock placer,0
 place.incremental.incrCrit,boolean,False,enable incremental criticality in placer,1
@@ -2983,7 +2983,7 @@ place.incremental.minSpiralLimitOffset,integer,False,Min spiral Offset,5
 place.incremental.moveGuidedCellsWithUnguidedNeighbours,boolean,False,Allow guided instances to move in PCO whose neighbourhood is unguided,0
 place.incremental.myTest,boolean,False,My test,0
 place.incremental.netMatchThreshold,float,False,Continue with Incr Compile if Net Match% >=,75
-place.incremental.networkFlowThreshold,integer,False,,0
+place.incremental.networkFlowThreshold,integer,False,number of unplaced instances in DP which trigger network flow,0
 place.incremental.newGPinterval,boolean,False,"new schedule to vary interval or iters between major phases like ClockRegionPl, Macro etc",0
 place.incremental.newGPloop,integer,False,invoke new SimPL loop for incr-flow,1
 place.incremental.newNetInternal,boolean,False,new way to check internal nets,1
@@ -3038,15 +3038,15 @@ place.incremental.SDAccel,integer,False,Run Incr-Placer for SDAccel flow,0
 place.incremental.selectiveReuseThreshold,float,False,Cell guidance percentage below which restored state will be cleared before default flow starts in selective reuse,75
 place.incremental.setTargetSlack,float,False,Override the refWNS coming from .incr file: give new refWNS in ns (can't give 0),0
 place.incremental.showRMReusePerInPRFlow,boolean,False,Parameter to show RM reuse percentage(PR flow) in RCI reporting,0
-place.incremental.skipGuidedSmallShapeBasedOnCriticality,boolean,False,Auto Placer aligns on device view,1
-place.incremental.skipGuidedSmallShapeThresholdInDP,integer,False,Set the max number of LUTs to be deomposed per bin,5
+place.incremental.skipGuidedSmallShapeBasedOnCriticality,boolean,False,No description available,1
+place.incremental.skipGuidedSmallShapeThresholdInDP,integer,False,No description available,5
 place.incremental.skipMLOInRCI,boolean,False,Skip mandatory logic optimization in RCI,0
 place.incremental.skipSaturatedBlockInNF,boolean,False,skip saturated block in nf,1
 place.incremental.skipSimPL,boolean,False,"if initial placer gives target QoR and util, then we may chose to skip SimPL",0
 place.incremental.slackThresholdCost,integer,False,slack cost threshold for unguide,-50
 place.incremental.spiralOffForLUTFF,boolean,False,Spiral-based legalizer off for LU/FFs,1
 place.incremental.spiralOffForLUTRAM,boolean,False,Spiral off for LUTRAM,1
-place.incremental.staleEdgesThreshold,float,False,,0
+place.incremental.staleEdgesThreshold,float,False,Threshold Stale edges to consider for timing,0
 place.incremental.thresh4OptimLoc,integer,False,"While processing in decreasing order of guidedness in neighborhood, if pct of current inst is below this threshold then exit OptimLoc",10
 place.incremental.timerThreshold,float,False,guidance threshold below which timer is invoked,101
 place.incremental.tryImproveQor,float,False,Will try to improve QoR,0
@@ -3071,7 +3071,7 @@ place.incremental.unguideInSllPath,boolean,False,Unguiding crit insts in SLL Pat
 place.incremental.unguideLimit,integer,False,Number of cells to be un-guided in each simpl iteration,500
 place.incremental.unguideLUTFF,boolean,False,Unguide LUT-FFs post ILR,0
 place.incremental.unguideNeighbors,boolean,False,Unguide neighbors of critical insts,0
-place.incremental.unguidePGShapeIfdeleteOptFails,boolean,False,,1
+place.incremental.unguidePGShapeIfdeleteOptFails,boolean,False,Unguide partially guided shape if delete for any of the optional elements while validation,1
 place.incremental.unguideRestrictedInsts,integer,False,Populate/Unguide Restricted Insts,1
 place.incremental.unguideToCommitBigShape,boolean,False,Unplace small shapes and instance while commiting big shape,1
 place.incremental.unplaceForWl,boolean,False,Unplace Instances in Partially Guided Nets for WL,0
@@ -3079,7 +3079,7 @@ place.incremental.updateWireDelaysAfterClockTree,boolean,False,update wireDelays
 place.incremental.updateWLRatioInSimpl,boolean,False,Update WL Ratio for Congestion,0
 place.incremental.updClkPins,boolean,False,During UpdateTiming Update Clock Pins,1
 place.incremental.UpdtAttrsAtPlacerEnd,boolean,False,Update REUSE attributes on cells at the end of incr-placer or incr-router,0
-place.incremental.useDefaultFlowCrit,boolean,False,,1
+place.incremental.useDefaultFlowCrit,boolean,False,Compute crit using def flow mechanism,1
 place.incremental.useFastDlyCalc,boolean,False,to turn on/off building term info cache in incr-placer,0
 place.incremental.useHistoryCostInNF,boolean,False,use displacement history in nf,1
 place.incremental.useMTILRsequentially,boolean,False,Use MT ILR class but do not run in parallel for different SLRs,0
@@ -3093,12 +3093,12 @@ place.incremental.useSLCost,boolean,False,use slack cost to unguide,0
 place.incremental.UTinEachSimPLiter,boolean,False,do update timing in each SimPL iteration,1
 place.incremental.UTinGP,boolean,False,new schedule for when to do UpdateTiming and UGfQoR in GP,0
 place.incremental.validateCellGuidance,boolean,False,Validate Cell GuideDB,0
-place.incremental.verticalHistoryCoeff,float,False,,0.5
+place.incremental.verticalHistoryCoeff,float,False,No description available,0.5
 place.incremental.WNSfactorUGfQoR,float,False,Do not invoke Unguiding for QoR if currWNS is worse than refWNS by less than this factor,0
 place.incremetal.unguideWNSLimit,integer,False,Percentage of slack for unguiding within the range of WNS,30
 place.incrKeepPLTerms,boolean,False,Do not delete PLTerms at disconnect. Reconnect to old PLTerms if possible,0
 place.incrUpdatePlaceData,boolean,False,Turn on/off incremental place data update,1
-place.incrUpdateTimingAfterReplication,boolean,False,cong option for min size for bb to smear along the RSA edge,1
+place.incrUpdateTimingAfterReplication,boolean,False,No description available,1
 place.inferHighPriorityClks,boolean,False,Infer HIGH_PRIORITY clocks based on hierarchy,0
 place.inferHPClksDiabloOnly,boolean,False,self explanatory,1
 place.initBloat,integer,False,Initial bin bloat,5
@@ -3166,11 +3166,11 @@ place.lmMinNumBlocksForMultiThread,integer,False,Parameter controlling when to s
 place.lmMinNumBlocksInOneColor,integer,False,Parameter controling how many blocks can be in the same color even if its weight exceeded,1
 place.lmNeighborCostNumThreads,integer,False,Parameter controlling minimum number of threads for neighbor move costing,1
 place.lmNeighborCostSchedulerType,string,False,Parameter controlling scheduler type for neighbor move costing,omp
-place.lmNeighborMoveNumThreads,integer,False,,1
+place.lmNeighborMoveNumThreads,integer,False,Parameter controlling minimum number of threads for neighbor move,1
 place.lmNeighborMoveSchedulerType,string,False,Parameter controlling scheduler type for neighbor move,omp
 place.lmNumIterForFastRelaxTiming,integer,False,self explanatory,10
 place.lmNumIterForSlowRelaxTiming,integer,False,self explanatory,20
-place.lmNumIterToEnableSecondMesh,float,False,,0.6
+place.lmNumIterToEnableSecondMesh,float,False,self explanatory,0.6
 place.lmNumIterToEnableStrongTheta,float,False,self explanatory,0.8
 place.lmNumIterToSaveTheta,float,False,self explanatory,1.5
 place.lmNumThreads,integer,False,Parameter controlling minimum number of threads in LM,4
@@ -3221,7 +3221,7 @@ place.makeVerboseModeVisiblePhasesSilent,boolean,False,Make phases that are visi
 place.MaogangTestFlag2,boolean,False,internal dev boolean flag for maogangw,0
 place.MaogangTestFlag3,boolean,False,internal dev boolean flag for maogangw,0
 place.MaogangTestFlag,boolean,False,internal dev boolean flag for maogangw,0
-place.MaogangTestFloat,float,False,,-1
+place.MaogangTestFloat,float,False,internal dev double value for maogangw,-1
 place.MaogangTestInt2,integer,False,internal dev integer for maogangw,-1
 place.MaogangTestInt,integer,False,internal dev integer for maogangw,-1
 place.mateFFWithLUTRAMMUXs,boolean,False,Mate FF with driving mux & lutram,1
@@ -3256,7 +3256,7 @@ place.minLevelForEarlyRepartitioning,integer,False,For early repartitioning esti
 place.minLutsForClockRootsSweep,integer,False,Min number of LUTs required to run clock root sweep,100000
 place.minLutsForCongestionModeling,integer,False,Min number of LUTs required to tweak number of wires during placer congestion modeling,100000
 place.minLutUtilToBloatLutRams,float,False,Minimum lut utilization to bloat lutrams during big shape legalizer,20
-place.minModuleSizeForRentCalculationInMT,integer,False,,1000
+place.minModuleSizeForRentCalculationInMT,integer,False,Limiter on the size of the module for rent parameter calulation in multi-thread mode,1000
 place.minModuleSizeForRentCalculation,integer,False,Limiter on the size of the module for rent parameter calulation,40000
 place.minSlackToDisableTimingEdge,integer,False,Min Slack to disable edge for timing,-1
 place.minSlackToDisableTimingEdgeTighteningCoef,integer,False,Min Slack to disable edge tightening coef,10
@@ -3307,14 +3307,14 @@ place.multiTypePartitioner,integer,False,Use Vivado Partitioner in multi-type mo
 place.needQPForBali,boolean,False,Run QP in between ILR bloats for Bali,0
 place.needTimingUpdateInEarlyRepartitioning,boolean,False,Control timing update call in early repartitioning,1
 place.netDegreeBalancedCut,boolean,False,Check is the cut is balanced interms of net degree if not redo cut to balance net degree.,0
-place.netlistInst2BlockFix,integer,False,"Name automatically generated clocks by top level net attached to the clock modifying cell output pin. If false, name according to inputClk:cellName:inputPin:outputPin",0
+place.netlistInst2BlockFix,integer,False,No description available,0
 place.netSharingScoreForSingleLut,integer,False,"Score for net sharing for a singlton lut in a lut pair A/B, etc. Used in inode congestion optimization",6
 place.newAreaConstraintDB,integer,False,"Level 0 = off, Level1 =on, Level2=first algorithm on",4
 place.newCongestionMetric,boolean,False,"Use new congestion metric, potentially combine with route.newCongestionMetric",0
 place.newCongestionMetric.congSlackMinForBBSmear,integer,False,min slack above which we take a bb smear method when in RSA tree congestion calculation mode,2000
 place.newCongestionMetric.horBloatRSAZeroEdge,integer,False,bloat RSA edge when smearing it if size is zero,0
 place.newCongestionMetric.maxNetFanoutForBBSmear,integer,False,"when new congestion metric is used, use this param to set the max net fanout under which we always bb smear",2
-place.newCongestionMetric.minSizeForRSAEdgeSmear,integer,False,,10
+place.newCongestionMetric.minSizeForRSAEdgeSmear,integer,False,cong option for min size for bb to smear along the RSA edge,10
 place.newCongestionMetric.verBloatRSAZeroEdge,integer,False,bloat RSA edge when smearing it if size is zero,0
 place.newCongestionMetricVerbose,integer,False,verbose mode in new congestion approach,0
 place.newILRNumThreads,integer,False,new ilr num threads,-1
@@ -3467,7 +3467,7 @@ place.postCommitCriticalEdgeMaxDelayDelta,float,False,Maximum delay(in picosecon
 place.postCommitCriticalEdgePreEstimate,boolean,False,Quickly judge whether move is promising by looking at new delay on the most critical edge,1
 place.postCommitDeleteLutnmShapes,boolean,False,Before PCOpt delete lutnm shapes,1
 place.postCommitDifferentClockThreshold,integer,False,Minimum slack improvement require when moving instances to different clock regions,200
-place.postCommitDifferentIOColThreshold,integer,False,,200
+place.postCommitDifferentIOColThreshold,integer,False,Minimum slack improvement require when moving instances across an IO Column,200
 place.postCommitDifferentSLRThreshold,integer,False,Minimum slack improvement require when moving instances to different SLRs,500
 place.postCommitEvaluateAllLocInClb,boolean,False,Turn this on if you need to evaluate all the locs within a CLB during post Commit Optimizer(runtime intense),1e+09
 place.postCommitIterateChangedBlocks,boolean,False,Turn this on if you want to reset slacks on changed blocks only after the pcopt iteration,0
@@ -3752,7 +3752,7 @@ place.sllMargin,integer,False,SLL start/end margin from SLR vertical boundary,49
 place.sllUtilTarget,integer,False,sll utilization target during area swap optimization,1
 place.sllUtilThreshold,float,False,sll utilization threshold to turn on super long spreading,20
 place.sllVerbose,integer,False,Verbosity level for SUPER_LONG blocks manager,1
-place.slrCrossingPenalty,integer,False,Unguide partially guided shape if delete for any of the optional elements while validation,0
+place.slrCrossingPenalty,integer,False,No description available,0
 place.slrCutTargetUtil4ILR,float,False,SLR cut target utilization during ILR,300
 place.slrCutTargetUtil,float,False,SLR cut target utilization,-1
 place.SLRFixVerbose,integer,False,verbose for SLR fix,0.2
@@ -3773,7 +3773,7 @@ place.smearFactorRelaxCoef,float,False,Relax BB smearing coeficient,1
 place.softShapeFlow,boolean,False,Test soft shape flow,1
 place.sparseSliceMaker,boolean,False,"At the end of post commit opt try to space out lut/ff bels within each SLICE, if possible",0
 place.spiralModeClockRootSweep,boolean,False,param to start a spiral search to find best clock roots,0
-place.splitCrossingNetsMode,string,False,,0
+place.splitCrossingNetsMode,string,False,"Specifies when to split SLR crossing nets by dummy blocks. The value can be : empty string which means do not split nets 'GP' which means split nets in global placer and keep them split for remaining part of placer 'DP' which means split nets in detail placer and keep them split for remaining part of placer any combination of 'BigShape', 'SmallShape' and 'FF' which means split nets to specified detail placement step and restore nets after that step is done",0
 place.SRLBusCreation.fullVerbose,boolean,False,Make SRL Bus Creation full verbose,BigShape SmallShape FF
 place.SRLBusCreation.ignoreSingles,boolean,False,Only attempt to create SRL Bus Shapes from more that one detected SRL in a bus,0
 place.SRLBusCreation.netlistStruct,boolean,False,Use netlist data structure and topology to detect a bus of SRL instances and use to create shapes from it,1
@@ -3843,7 +3843,7 @@ place.turnOffMemoryProfilingDuringTiming,boolean,False,Temp during memjack profi
 place.turnOffOldAreaConstraintDB,boolean,False,Turn off the old area constraint DB,0
 place.unplaceSlackDelta,integer,False,Unplace a block if slacks of its terms are greater than WNS + this number during PPO flow,0
 place.updateClockPins,boolean,False,Update clock network delays,1500
-place.updateClockTreesInILR,boolean,False,,1
+place.updateClockTreesInILR,boolean,False,param to turn on updating clock trees in ILR iterations,1
 place.updateTimingBeforeFM,boolean,False,Run update timing before FM,1
 place.updateUseEstimatedDelayFlagForClkNets,boolean,False,param to turn on/off forcing estimated delays for global clocks that are fully routed but not all the way to the site pins,0
 place.updateWireDelaysAndTimingAfterUpdaingClockTree,boolean,False,param to turn on updating timing after clock tree is updated,0
@@ -3862,7 +3862,7 @@ place.useLUTNMPinMapping,boolean,False,Use LUTNM pin mapping during delay calcul
 place.useMatchAssign,boolean,False,Use Matching Assigner for Area Legalization,1
 place.useMultiCornerTimer4PathOpt,boolean,False,Use multi corner mode for the timer during path optimization.,1
 place.useMultiCornerTimer4PostCommit,boolean,False,Use multi corner mode for the timer during post-commit optimization.,1
-place.useMultiCornerTimer,boolean,False,,1
+place.useMultiCornerTimer,boolean,False,Use multi corner mode for the timer.,1
 place.useMultiCornerTimerwithCommonNode,boolean,False,Use Common Node multi corner mode for the timer during path optimization.,1
 place.useNewBudgeter,boolean,False,Use new budgeter,0
 place.useNewILR,boolean,False,Use new ilr,0
@@ -3907,7 +3907,7 @@ power.correctTDPWidth,boolean,False,This is to correct the synthesis issue where
 power.correlateDspPower,boolean,False,This is to export the weighted toggle rate to correlate dsp power between RP and XPE,0
 power.correlatePropagationResults,boolean,False,Correlate net probabilities and frequencies between 2 consecutive runs of report_power; used for debugging,1
 power.deassertSetReset,boolean,False,deassert set reset,0
-power.debugIncr,boolean,False,,0
+power.debugIncr,boolean,False,Debug incremental analysis,0
 power.disableGlitchAnalysis,boolean,False,Disables glitch activty estimation for vector-less flow,0
 power.disablePowerUp,boolean,False,Disable power-up reporting for voltage supplies,0
 power.disableUnsupportedParts,boolean,False,Disables power computation commands for unsupported parts,0
@@ -3969,9 +3969,9 @@ power.incrTestMode2,boolean,False,Enables work-around to ensure that full and in
 power.incrTestMode,boolean,False,Enables work-arounds to ensure that full and incremental analysis give same results for netlist update,0
 power.incrTopoSort,boolean,False,Enables incremental topo sort,0
 power.limitNumRelevelization,boolean,False,debuggingg purpose,0
-power.mantissaOfSchematicSA,integer,False,,1
+power.mantissaOfSchematicSA,integer,False,Number of digits to be used after decimal point for switching activity on schematic,1
 power.maxThreadsBDD,integer,False,Maximum number of threads used for BDDs,2
-power.maxThreadsIncrPropagation,integer,False,,0
+power.maxThreadsIncrPropagation,integer,False,Maximum number of threads created for report_power. A non-zero value will override any value set for global.maxThreads. A zero value (default) indicates this param should be ignored. Value should be >= 0 and <= 24,0
 power.maxThreads,integer,False,Maximum number of threads created for report_power. A non-zero value will override any value set for global.maxThreads. A zero value (default) indicates this param should be ignored. Value should be >= 0 and <= 24,0
 power.maxThreadsPropagate,integer,False,Maximum number of threads used for propagation,0
 power.mergeBramCascadeRowXPE,boolean,False,Enable merging of cascaded BRAM groups for XPE exporting.,0
@@ -4098,7 +4098,7 @@ project.enableOOCIPReference,boolean,False,Enable references with OOC IP.,0
 project.enableOpenCheckpointWithCurrentProject,boolean,False,Enable open_checkpoint command to use the current project.,0
 project.enablePackagedBDHandoff,boolean,False,Enable packaged BD files for Handoff,0
 project.enablePerfMeasureForNewXpr,boolean,False,"This is a temporary parameter, enable the performance measure output when use the new xpr parser/wrter.",0
-project.enablePlatformHandoff,boolean,False,,0
+project.enablePlatformHandoff,boolean,False,Enable exporting of platform files to SDK,0
 project.enablePMCBootSettings,boolean,False,Enables PMC boot settings on project,0
 project.enablePRFlow,boolean,False,Enable PR project flow,1
 project.enablePRFlowIPI,boolean,False,Enable PR project flow in IPI,1
@@ -4294,11 +4294,11 @@ route.computeEndPtChecksum,boolean,False,Compute endpoint checksum,0
 route.computeRxTapSetting,boolean,False,Control for Rx tap setting computation in dedicated connection hold fix,0
 route.congCostCoef,float,False,congestion cost coefficient,1
 route.congEstATreeBlt,integer,False,Bloat value for ATree cong estimation,0.3
-route.congEstATreePinLimit,integer,False,,1
+route.congEstATreePinLimit,integer,False,When to use ATree cong est,1
 route.congEstShortATreeHBlt,integer,False,Bloat factoro for horizontal direction in short ATree estimation,50
 route.congEstShortATreeVBlt,integer,False,Bloat factor for Vertical direction in short ATree estimation,0
-route.cong.gpBlUtil,string,False,Enable new inode assignment flow,0
-route.cong.gpUtil,string,False,Debug incremental analysis,cong/GPUtil_w_ws.dt.gz
+route.cong.gpBlUtil,string,False,No description available,0
+route.cong.gpUtil,string,False,No description available,cong/GPUtil_w_ws.dt.gz
 route.congLevelForLowDlyCoeff,integer,False,Congestion level for low dly coeff,cong/GPUtil_wo_ws.dt.gz
 route.congLevelThreshold,float,False,Threshold for computing congestion level,5
 route.congLevelUtilThreshold,string,False,Congestion utilization thresholds,1
@@ -4314,7 +4314,7 @@ route.considerBranchPenalties,boolean,False,consider branching penalties in rout
 route.considerEffCongRegInLowDlyCosting,boolean,False,Consider effective cong regions in low delay costing,1
 route.constraintLocalClocks,boolean,False,Create delay constraints for local clocks for best routing,1
 route.convLRTHold.minDetour,integer,False,Min detour required to enable detour insertion,1
-route.costCoeff,float,False,When reading/writing XDEF ignore the fact a different device is being loaded.,50
+route.costCoeff,float,False,No description available,50
 route.costCoef,float,False,cost coefficient,1
 route.createTimerWithRTDesign,integer,False,"create timer in parallel with build rtDesign (0 OFF, 1 AUTO, 2 ON)",1.1
 route.dbgBranchPenaltyBldg,boolean,False,Debug branch penalty tables,1
@@ -4388,7 +4388,7 @@ route.disableLeafClockModeling,boolean,False,Disable leaf clock utilization mode
 route.disableLPSkewAssignHold,boolean,False,Disable Hold constraint modeling,0
 route.disableMinMaxHoldBudgeter,boolean,False,Disable setupslacks during hold budgeting,0
 route.disablePinCongCleanUp,boolean,False,disables pin congestion clean up Phase,0
-route.disableRestore,boolean,False,write Verilog before and after mandatory logic opt (default: off),0
+route.disableRestore,boolean,False,No description available,0
 route.disableRuntimeEstimation,boolean,False,Disable runtime estimator at start of router,0
 route.disableSlowMinFixing,boolean,False,Turnoff Slow corner hold fixing in router,1
 route.disableSrcFilterForGlobalClkRt,boolean,False,Disabling src filtering for global clock routing,0
@@ -4396,7 +4396,7 @@ route.DistFromLaguna,integer,False,Report tile congestion till the distance from
 route.distLocalCongDn,boolean,False,Distribute congestion from LOCAL nodes downhill,5
 route.distLocalCongEvenly,boolean,False,Distribute congestion from LOCAL evenly,1
 route.distLocalCongUp,boolean,False,Distribute congestion from LOCAL nodes uphill,1
-route.dlyCleanupDbg,boolean,False,,1
+route.dlyCleanupDbg,boolean,False,Verbose log for delay cleanup,1
 route.dlyCleanUpMaxFanout,integer,False,Max fanout for nets in Delay CleanUp Phase,0
 route.dlyCleanUpNcnSkew,boolean,False,Use NCN skews for Delay CleanUp Phase,200
 route.dlyCoeffPostInitRouting,boolean,False,Adjust Dly coeff after initial routing,1
@@ -4487,7 +4487,7 @@ route.enableHighPrioritySlackRange,boolean,False,Enable high priority slack rang
 route.enableHoldExpnBailout,boolean,False,"Enable hold expansion based bail-outs,",1
 route.enableHoldRouter,boolean,False,Turn on hold router,1
 route.enableIncrTiming,boolean,False,Enable Incremental Timing analysis for router,1
-route.enableInodeAssignmentFlow,boolean,False,,1
+route.enableInodeAssignmentFlow,boolean,False,Enable new inode assignment flow,1
 route.enableInodeMatching,boolean,False,Enable INode matching flow,1
 route.enableIOGroupOptimization,boolean,False,Set targets for IO constraint based path groups,0
 route.enableLowDlyCostForCongReg,boolean,False,Enable low delay costing for cong regions,0
@@ -4522,7 +4522,7 @@ route.evalarch.dumpBestRouting,boolean,False,"Save best routing (in terms of ove
 route.evalarch.dumpInitialRouting,boolean,False,"Dump initial routing to the file, route.output.init.txt. Default=False",0
 route.evalarch.dumpNodeCongFile,boolean,False,Dump Congestion and contention information per node name. Default=False.,0
 route.evalarch.fanoutDependentDelay,boolean,False,Consider fanout when retiming routed designs. Default=False.,0
-route.evalarch.GIterBailOutCong,integer,False,,0
+route.evalarch.GIterBailOutCong,integer,False,Router Global Iter overlap bailout,0
 route.evalarch.interposerDrvMask,boolean,False,Unset the LONG->LONG driver mask and add Interposer->Interposer Mask. Default=False.,0
 route.evalarch.layerCrossingAwareAstar,boolean,False,"For AOA devices only, make AStar expansions aware of layer crossings by adding additional costs. Default=True.",0
 route.evalarch.longMaskMinDist,integer,False,Tile distance for whicht he Long->Long chain/interposer chain mask kicks in. Default=64,1
@@ -4659,7 +4659,7 @@ route.holdDbgPinCountId,integer,False,switch hold router to debug mode nth pin i
 route.holdDbgPinTermId,integer,False,switch hold router to debug mode for given termid,-1
 route.hold.detourBasedCosting,boolean,False,Enable detour based costing for hold complex engine,-1
 route.hold.enableFirstINTTileForEstCost,boolean,False,Use first INT tile (in rev expand for estimate calculations.,1
-route.holdEstCostDerateFac,float,False,,1
+route.holdEstCostDerateFac,float,False,Derate Factor for hold,1
 route.hold.FailThreshold,integer,False,Hold slack threshold below which it is treated as a failure,0
 route.holdFixEffort,integer,False,Hold fixing effort level,0
 route.holdForcedExpander,integer,False,"Force simple(1),/complex(2) hold expander with this param",1
@@ -4714,7 +4714,7 @@ route.incremental.checkLowReuse,boolean,False,Check pin guidance percentage at t
 route.incrementalCongPlacer,boolean,False,Incremental congestion placer,1
 route.incremental.congSlopeFactor,float,False,Factor to decide weighted average of congestion,0
 route.incremental.congThresholdForPrintNodes,integer,False,Congestion threshold for printing node information,0.33
-route.incremental.disableGuidedTimingPaths,boolean,False,,0
+route.incremental.disableGuidedTimingPaths,boolean,False,Disable guided timing paths,0
 route.incremental.disableGuidedTimingPathsForOlympus,boolean,False,Disable guided timing paths in Olympus,1
 route.incremental.doLeafClockProgDelayOpt,boolean,False,Do leaf clock programmable delay optimizaion in incremental flow,0
 route.incremental.doNotClearPhysDBInRCI,boolean,False,Do not clear phys db routing during route restoration in RCI,1
@@ -4745,8 +4745,8 @@ route.incremental.skipGIterSoon,boolean,False,to skip further global iterations 
 route.incremental.skipIfIRHasOpenNets,boolean,False,Return from router if Initial Route has open nets,1
 route.incremental.skipSllAssignment,boolean,False,Do not Pre-assign SLLs for SSI devices in incr-flow,0
 route.incremental.slopeBasedUnlock,boolean,False,Congestion slope based unlocking,0
-route.incremental.stopHoldFixingAtGIter,boolean,False,Min density for tile to be colored,1
-route.incremental.stopHoldFixingAtGIterThreshold,integer,False,Disable guided timing paths,1
+route.incremental.stopHoldFixingAtGIter,boolean,False,No description available,1
+route.incremental.stopHoldFixingAtGIterThreshold,integer,False,No description available,1
 route.incremental.testingSameGuide,boolean,False,Turn ON to test SameGuide flow,100
 route.incremental.turnOffFRIRForRefNotMeeting,boolean,False,turn off FRIR for designs not meeting in Ref,0
 route.incremental.unguideIfNotConverged,boolean,False,Unguide all nets if design not converged in a global iteration,1
@@ -4766,10 +4766,10 @@ route.inodeExpCountTrigger,float,False,Expansion count trigger after which inode
 route.inodeFixInterval,integer,False,Iteration interval between inode fixing iterations,2
 route.inodeSolver.autoSolve,boolean,False,Figure congested tiles based on pin denisty,10
 route.inodeSolver.congestedTilesFile,string,False,Congested tiles to color,0
-route.inodeSolver.congTileMinPinDensity,float,False,,None
+route.inodeSolver.congTileMinPinDensity,float,False,Min density for tile to be colored,None
 route.inodeSolver.matchAndColor,boolean,False,Figure congested tiles based on pin denisty,0.85
 route.inodeSolver.pinCongFrac,float,False,Min inode+lutinput to total congestion frac.,1
-route.inodeSolver.satSolve,boolean,False,Router Global Iter overlap bailout,0.7
+route.inodeSolver.satSolve,boolean,False,No description available,0.7
 route.inodeSolver.writeCongestedTilesFile,string,False,Write Congested tiles to color,0
 route.inputBudgetFile,string,False,File with timing budget information,None
 route.insertLRTs4HoldAfterConvergence,boolean,False,Create LUT route-throughs after convergence to fix hold,None
@@ -4818,7 +4818,7 @@ route.maxMovesPerPCOptIter,integer,False,Max number of moves per iteration in PC
 route.maxNumCongNode,integer,False,Start reporting on contention if the number of overlaps is less than this number,40
 route.maxNumDSPCascFailuresToReport,integer,False,Max number of DSP cascade failures to report,0
 route.maxNumPinDensityTiles,integer,False,Number of tiles with high pin density after which we trigger local smearing,5
-route.maxNumRt,integer,False,,2500
+route.maxNumRt,integer,False,No description available,2500
 route.maxPCOptCongestion,integer,False,Max congestion created in PCOpt,3
 route.maxPCOptIters,integer,False,Max number of iterations to optimize in PCOpt,1500
 route.maxPCOptPaths,integer,False,Max number of paths to optimize in PCOpt,2
@@ -4850,7 +4850,7 @@ route.minTimingIterCongTgt,integer,False,Minimum congestion target during critic
 route.minTimingTarget,float,False,Minimum timing target to achieve in router,30
 route.ml.exitAtConv,boolean,False,Exit after convergence.,0
 route.ml.exitAtData,boolean,False,Exit after ML data capture.,0
-route.moreFreeResHold,boolean,False,,0
+route.moreFreeResHold,boolean,False,Enable one more free res hold iter.,0
 route.moreFreeResHoldOnDiffConn,boolean,False,Enable free res hold fixing on last leg connection of the failing paths.,1
 route.mpf.dbgDisableTimingEdgeTerm,integer,False,Debug TermId for disabling timing edges,1
 route.mpf.disableTimingEdgesInOtherSLRs,boolean,False,Disable timing edges that are of no conern to SLR routing,-1
@@ -5023,13 +5023,13 @@ route.strictEstMinDly,boolean,False,Use strict estimated min delays for hold ana
 route.swapSetsFile,string,False,Swap sets for XML architecture,0
 route.targetRelaxFactor,float,False,"Percentage of period to relax target by, default is no relaxation",None
 route.tempPCOptFix,boolean,False,Temporary fixes for PCOpt flow,-1
-route.termBlockSize,integer,False,Derate Factor for hold,0
+route.termBlockSize,integer,False,No description available,0
 route.testRestore,boolean,False,Test param for restore mechanism,1000
 route.thresholdCongForDlyCoeff,integer,False,Threshold congestion for delay coeff tuning,0
 route.tightenMigInterface,integer,False,Amount in ps to tighten setup requirement on MIG,5
 route.timingDbgFromToThruSeq,string,False,Timing Path Debug,10
 route.timingGIterExpnBailChk,integer,False,Number of expansions before checking for bail out in Timing iterations,None
-route.timingRelax.fanoutThreshold,integer,False,,2000
+route.timingRelax.fanoutThreshold,integer,False,Fanout threshold when expanding from congested region,2000
 route.timingTargetControl,integer,False,Control for setting target slacks,100
 route.tnsPathIncFactor,integer,False,Multiplicative factor for number of paths fixed in each TNS iteration,0
 route.triggerCongSlopeBailout,boolean,False,Trigger Bailouts based on congestion slope,2
@@ -5136,7 +5136,7 @@ simulator.modelsimInstallPath,string,False,ModelSim's installation path,None
 simulator.modelsimNoQuitOnError,boolean,False,Do not quit on error or break by default for ModelSim/QuestaSim simulation. To quit simulation on error or break set this param to false.,None
 simulator.questaInstallPath,string,False,Questa installation path,1
 simulator.quitOnSimulationComplete,boolean,False,"Quit simulator on simulation completion for ModelSim/QuestaSim simulation. To disable quit, set this param to false.",None
-simulator.rivieraInstallPath,string,False,,1
+simulator.rivieraInstallPath,string,False,Riviera-PRO installation path,1
 simulator.rivieraNoQuitOnError,boolean,False,Do not quit on error or break by default for Riviera-PRO simulation. To quit simulation on error or break set this param to false.,None
 simulator.useAdditionalVendorKeys,boolean,False,ModelSim use additional vendor keys when re-encrypt file with IEEE1735,1
 simulator.vcsmxInstallPath,string,False,VCS-MX installation path,0
@@ -5209,7 +5209,7 @@ sta.enableAOCV,string,False,Enable advanced on-chip variation (AOCV) technology.
 sta.enableArcSpecificDelays,boolean,False,"Enables delay values to be set per TimingArc. If disabled, the first delay for an edge will be set on all TimingArcs.",0
 sta.enableAutoGenClkDerivation,boolean,False,Enable automatic generation of derived clocks on clock modifying cells,0
 sta.enableAutoGenClkNamePersistence,boolean,False,Enable persistence of auto gen clk name information across export/import for naming consistency/repeatability,1
-sta.enableAutoGenClkNamingByNet,boolean,False,,1
+sta.enableAutoGenClkNamingByNet,boolean,False,"Name automatically generated clocks by top level net attached to the clock modifying cell output pin. If false, name according to inputClk:cellName:inputPin:outputPin",1
 sta.enableBelTracing,boolean,False,Enable Bel Tracing mode,1
 sta.enableChecksums,boolean,False,Enable checksum printing,0
 sta.enableCheckTimingGuiDebug,boolean,False,Enables debugging of gui reporting for checkTiming,0
@@ -5230,7 +5230,7 @@ sta.enableInternalStartPruning,boolean,False,Enable ucf2sdc pruning of internal 
 sta.enableIOTimingOptimization,boolean,False,Enable IO timing optimization,1
 sta.enableLutramDelays,boolean,False,Enables resetting of lutram delays,0
 sta.enablePathTracingControls,boolean,False,Enable path tracing controls (default true),0
-sta.enablePinPhaseMode,boolean,False,,1
+sta.enablePinPhaseMode,boolean,False,Temporary param to allow enabling functionality where CMB pin phase can be treated as either latency or waveform shift,1
 sta.enablePinSwitchingLimits,boolean,False,Enable pin switching limit timing checks (default true),1
 sta.enablePlaceDBEvents,boolean,False,Enable incremental timing response to place db events (default false),1
 sta.enableSlackComparatorMode,boolean,False,"Enables hacks necessary for pin/path slack comparator project, such as reporting physical element pins",1
@@ -5316,16 +5316,16 @@ sta.sta4MaxThreads,integer,False,"Maximum number of threads created for sta4 tim
 sta.sta4NetDelayCalc,boolean,False,sta4 timer calculates the net delay at the timer initialization,0
 sta.sta4SeparateDelayCalculation,boolean,False,Perform delay calculation before timing propagation in the light timer,0
 sta.sta4WnsCaching,boolean,False,Enable the wns caching,0
-sta.storeLutRamWriteDelays,boolean,False,Build place group slice data matrix,1
+sta.storeLutRamWriteDelays,boolean,False,No description available,1
 sta.supportInternalPins,boolean,False,enables SDF writer support for internal pins,1
 sta.threadVerbose,integer,False,Verbose control for multithreaded code,1
 sta.timingDRCCells,string,False,List of cells to explore,0
 sta.timingEarlyLaunchAtBorrowingLatches,string,False,Remove clock latency pessimism from latch open edge at data pins of transparent latches (default auto),None
 sta.ucf2sdc.dataSheetDebug,boolean,False,Put an extra min delay of 0 on output paths when converting OFFSET OUT constraints so the data sheet will report min delays to output ports and we can compare ISE and Rodin numbers,auto
 sta.ucf2sdc.enableStopProp,boolean,False,Enable ucf2sdc created clocks to be condensed into a more compact form (default false),0
-sta.unitInstDly,integer,False,,1
+sta.unitInstDly,integer,False,Set the value (in ps) to be used for instance delays in place of normal instance delay calculation. Set to a negative value to disable unit delay mode.,1
 sta.unitWireDly,integer,False,Set the value (in ps) to be used for wire delays in place of normal wire delay calculation. Set to a negative value to disable unit delay mode.,-1
-sta.updateCarryChainArcs,boolean,False,Set the value (in ps) to be used for instance delays in place of normal instance delay calculation. Set to a negative value to disable unit delay mode.,-1
+sta.updateCarryChainArcs,boolean,False,No description available,-1
 sta.useCachedInstDelays,boolean,False,used cached instance delays during set inst delays,1
 sta.useNewTriggersFullUpdateApi,boolean,False,Whether to use the new triggersFullUpdate api,1
 sta.useV7UnplacedPinMapper,boolean,False,Use new V7 specific unplaced pin mapper,1
@@ -5333,7 +5333,7 @@ sta.useWnsCache,boolean,False,Utilize psta wns cache for quick getWns calls,1
 sta.v8ZeroClockLatency,boolean,False,Use zero ideal latency by default for all clocks (temporary parameter),1
 sta.veamVerbose,integer,False,Verbose level for evaluating Veam conditions,0
 sta.writeConstraintsTemplateDebug,integer,False,Debug level for write_constraints_template,0
-sta.zeroDelayInTimingReport,boolean,False,self explanatory,0
+sta.zeroDelayInTimingReport,boolean,False,No description available,0
 synth.AlternateSynthesisFlow,boolean,False,Alternate synthesis flow,0
 synth.constraint.limitExpansion,boolean,False,"Reduce the expansion of constraint object lists, instead passing the original unexpanded constraint.",0
 synth.constraint.skipPostLoad,boolean,False,Skip reading process constraints for post synthesis design load.,0
@@ -5425,7 +5425,7 @@ xdcin.enableObjectHierNameCache,boolean,False,Enable object hierarchical name ca
 xdcin.enableObjectSearchCache,boolean,False,Enable object search cache when reading xdc files.,1
 xdcin.skipReadingTimingConstraints,boolean,False,Skips reading timing constraints.,0
 xdcin.storeInvalidTimingConstrsInSDCMgr,boolean,False,"Store invalid timing constrains in SDC Mgr, instead of misc mgr.",0
-xdcin.useNewGetLine,boolean,False,,0
+xdcin.useNewGetLine,boolean,False,Use the new getline on read_xdc.,0
 xdef.allowPartialSiteRestore,boolean,False,Allow partial site implementation restore using collection of cells/ports found by name,1
 xdef.buildCrPrWithoutCtrNode,boolean,False,Restore Clk tree data,0
 xdef.dumpKdNodes,boolean,False,"During archive restore, dump the KdNode data to vivado log file",0
